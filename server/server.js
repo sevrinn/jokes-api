@@ -9,7 +9,10 @@ app.use(express.urlencoded({extended:true}));
 
 //configure mongoose to connect
 require('./config/mongoose.config');
-//
+
+// add routes to listen
+const jokeRoutes = require('./routes/joke.routes');
+jokeRoutes(app);
 
 //start app server listening
 app.listen(8000, () => {
